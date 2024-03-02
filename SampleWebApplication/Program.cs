@@ -1,3 +1,5 @@
+using API_Acumen_V2;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -20,4 +22,5 @@ app.UseRouting();
 
 
 app.MapControllers();
+app.UseMiddleware<TracingMiddleware>();
 app.Run();
