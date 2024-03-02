@@ -13,9 +13,10 @@ public class BooksController:ControllerBase
     }
 
     [HttpGet]
-    public ActionResult GetAll()
+    public async Task<ActionResult> GetAll()
     {
         _logger.LogInformation("Recieved a request to retreive all books");
+        await Task.Delay(TimeSpan.FromMilliseconds(500));
        return Ok("All books will be returned");
     }
 
